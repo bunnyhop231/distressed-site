@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Distressed — брендовая одежда в Telegram</title>
+<meta name="description" content="Distressed — брендовые кроссовки, худи, куртки и ботинки. Витрина на фото, склад, цены и размеры — в Telegram @fuckdistressed.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Distressed — брендовая одежда в Telegram">
+<meta property="og:description" content="Витрина на фото. Склад — в Telegram.">
+<meta property="og:image" content="img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b0b0d">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b0b0d'/%3E%3Crect x='9' y='9' width='14' height='14' fill='%23c9ff2e'/%3E%3C/svg%3E">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{--ink:#0b0b0d;--panel:#131316;--paper:#f4f4f1;--acid:#c9ff2e;--muted:#a5a59e;--line:#26262b;--f:Inter,"Helvetica Neue",Arial,system-ui,sans-serif}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--f);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f);font-weight:800;margin:0}
+section{scroll-margin-top:64px}
+.btn{display:inline-block;font-size:16px;font-weight:700;padding:15px 28px;background:var(--acid);color:var(--ink);border:2px solid var(--acid);text-decoration:none;transition:.25s}
+.btn:hover,.btn:focus-visible{background:transparent;color:var(--acid);transform:translateY(-3px);outline:none}
+/* header */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(16px,4vw,48px);background:rgba(11,11,13,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.logo{font-weight:800;font-size:18px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.logo i{width:9px;height:9px;background:var(--acid)}
+.nav{display:flex;align-items:center;gap:clamp(12px,2vw,28px)}
+.nav a.l{font-size:14px;color:var(--muted);text-decoration:none;transition:.25s}
+.nav a.l:hover{color:var(--acid)}
+.nav a.c{font-size:14px;font-weight:700;color:var(--ink);background:var(--acid);text-decoration:none;padding:9px 16px;border:2px solid var(--acid);transition:.25s}
+.nav a.c:hover{background:transparent;color:var(--acid)}
+/* cover */
+.cover{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;overflow:hidden}
+.intro{padding:clamp(104px,14vh,160px) clamp(16px,4vw,48px) clamp(26px,4vh,44px);display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(24px,4vw,64px);align-items:end;max-width:1440px;width:100%;margin:0 auto}
+.intro h1{font-size:clamp(2.4rem,5.6vw,5.6rem);line-height:.99;letter-spacing:-.03em;text-wrap:balance}
+.intro h1 span{color:var(--acid)}
+.side{display:flex;flex-direction:column;gap:20px}
+.lead{font-size:clamp(1rem,1.3vw,1.15rem);line-height:1.6;color:var(--muted);margin:0;max-width:52ch}
+.acts{display:flex;flex-wrap:wrap;align-items:center;gap:18px}
+.acts a.u{font-size:15px;text-decoration:none;border-bottom:2px solid var(--acid);padding-bottom:3px}
+.hint{font-size:13px;color:var(--muted);margin:0}
+.strip{position:relative;margin-top:auto;overflow:hidden;border-top:1px solid var(--line);background:var(--panel);padding:clamp(20px,3vh,34px) 0 clamp(58px,7.5vh,78px)}
+.track{display:flex;width:max-content;animation:roll 48s linear infinite}
+.grp{display:flex;align-items:center;gap:clamp(18px,2.6vw,38px);padding-right:clamp(18px,2.6vw,38px)}
+.grp span{font-size:clamp(1.25rem,2.8vw,2.3rem);font-weight:800;letter-spacing:-.02em;text-transform:uppercase;white-space:nowrap}
+.grp .s,.grp .m{color:var(--acid)}
+.tag{position:absolute;left:clamp(16px,4vw,48px);bottom:18px;background:var(--acid);color:var(--ink);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:8px 14px;transform:rotate(-3deg);box-shadow:4px 4px 0 rgba(11,11,13,.55)}
+.mq{overflow:hidden;padding:clamp(12px,2vh,22px) 0 clamp(16px,2.6vh,30px);border-top:1px solid var(--line)}
+.mq .track{animation-duration:26s}
+.mq span{font-size:clamp(1.9rem,4.6vw,4.4rem);font-weight:800;letter-spacing:-.02em;text-transform:uppercase;white-space:nowrap;padding-right:.35em;color:transparent;-webkit-text-stroke:1.5px var(--acid)}
+@keyframes roll{to{transform:translateX(-50%)}}
+/* shop */
+.shop{background:#0e0e10;padding:clamp(56px,9vw,110px) clamp(16px,4vw,48px)}
+.in{max-width:1280px;margin:0 auto}
+.head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:clamp(26px,3.6vw,44px)}
+.head h2,.steps h2{font-size:clamp(2rem,4vw,3.4rem);line-height:1.04;letter-spacing:-.03em}
+.note{font-size:14px;line-height:1.55;color:var(--muted);margin:0;max-width:40ch;border-bottom:2px solid var(--acid);padding-bottom:6px}
+.note b{color:var(--paper)}
+.grid{column-count:4;column-gap:16px}
+.tile{position:relative;display:block;width:100%;margin:0 0 16px;break-inside:avoid;padding:0;border:1px solid var(--line);background:var(--panel);overflow:hidden;cursor:pointer;color:inherit;text-align:left;font-family:var(--f);text-decoration:none;transition:border-color .4s,transform .4s,opacity .5s}
+.tile:hover,.tile:focus-visible{border-color:var(--acid);transform:translateY(-5px);outline:none}
+.tile img{display:block;width:100%;height:auto;filter:grayscale(.15) contrast(1.04);transition:transform .6s,filter .6s}
+.tile:hover img{transform:scale(1.05);filter:none}
+.cap{position:absolute;left:0;right:0;bottom:0;padding:34px 14px 13px;background:linear-gradient(to top,rgba(6,6,8,.92) 30%,transparent);display:flex;flex-direction:column;gap:3px}
+.cap b{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--acid)}
+.cap strong{font-size:15px;line-height:1.2}
+.cap small{font-size:12px;color:#cfcfc9}
+.pre{opacity:0;transform:translateY(20px)}
+.lock img,.lock:hover img{filter:blur(18px) brightness(.62) grayscale(.4);transform:scale(1.14)}
+.lk{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:16px;text-align:center;background:rgba(6,6,8,.28)}
+.lk svg{width:34px;height:34px;stroke:var(--acid);fill:none;stroke-width:2}
+.lk strong{font-size:clamp(15px,1.4vw,18px);font-weight:800;line-height:1.25;text-shadow:0 2px 10px #000;max-width:20ch}
+.lk em{font-style:normal;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink);background:var(--acid);padding:5px 10px;transform:rotate(-2deg)}
+.promo{background:var(--acid);border-color:var(--acid);color:var(--ink);min-height:240px;display:flex;flex-direction:column;justify-content:center;gap:12px;padding:clamp(20px,2vw,30px)}
+.promo:hover{border-color:var(--ink)}
+.promo .n{font-size:clamp(2.6rem,3.4vw,3.6rem);font-weight:800;line-height:.95;letter-spacing:-.03em}
+.promo .n i{font-style:normal;display:inline-block;font-size:clamp(3.2rem,4.6vw,4.6rem);animation:pulse 2.6s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.08)}}
+.promo p{font-size:15px;line-height:1.5;font-weight:600;margin:0;max-width:26ch}
+.promo u{font-size:14px;font-weight:800;text-decoration:none;border-bottom:3px solid var(--ink);align-self:flex-start;padding-bottom:2px}
+/* lightbox */
+.modal{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;padding:clamp(10px,2.4vw,28px)}
+.modal[hidden]{display:none}
+.bd{position:absolute;inset:0;background:rgba(6,6,8,.9);cursor:pointer}
+.panel{position:relative;z-index:61;width:min(960px,100%);max-height:calc(100vh - 24px);overflow-y:auto;background:#141417;border:1px solid var(--line);box-shadow:12px 12px 0 rgba(201,255,46,.14);animation:pop .4s}
+@keyframes pop{from{opacity:0;transform:translateY(24px)}}
+.x,.nb{position:absolute;z-index:63;display:flex;align-items:center;justify-content:center;background:rgba(11,11,13,.85);color:var(--paper);border:1px solid var(--line);cursor:pointer;transition:.25s;font-size:18px}
+.x{top:10px;right:10px;width:42px;height:42px}
+.nb{top:50%;transform:translateY(-50%);width:44px;height:44px;z-index:62}
+.nb.p{left:10px}.nb.n{right:10px}
+.x:hover,.nb:hover,.x:focus-visible,.nb:focus-visible{background:var(--acid);color:var(--ink);border-color:var(--acid);outline:none}
+.stage{position:relative;background:#101012;display:flex;justify-content:center;min-height:240px}
+.stage img{display:block;width:100%;max-height:min(66vh,640px);object-fit:contain}
+.ct{position:absolute;left:12px;bottom:12px;background:rgba(11,11,13,.82);border:1px solid var(--line);font-size:12px;font-weight:700;padding:6px 10px}
+.bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding:clamp(18px,2.4vw,28px);border-top:1px solid var(--line)}
+.bar p{margin:0}
+.bar .b{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--acid)}
+.bar h3{font-size:clamp(1.2rem,2.2vw,1.7rem);line-height:1.15;letter-spacing:-.02em;margin:5px 0}
+.bar .s{font-size:13px;line-height:1.5;color:var(--muted);max-width:46ch}
+.bar .btn{font-size:15px;padding:14px 24px;white-space:nowrap}
+/* steps */
+.steps{background:var(--acid);color:var(--ink);padding:clamp(56px,9vw,104px) clamp(16px,4vw,48px)}
+.steps .in{max-width:1120px}
+.steps h2{margin-bottom:clamp(30px,4vw,52px);max-width:18ch}
+.steps ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(24px,3vw,44px)}
+.steps li{display:flex;flex-direction:column;gap:14px;border-top:3px solid var(--ink);padding-top:20px}
+.ic{width:56px;height:56px;border-radius:50%;background:var(--ink);color:var(--acid);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px}
+.steps .k{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin:0;color:rgba(11,11,13,.62)}
+.steps h3{font-size:clamp(1.25rem,2vw,1.6rem);line-height:1.15;letter-spacing:-.02em}
+.steps li p.t{font-size:15px;line-height:1.6;margin:0;color:rgba(11,11,13,.82);max-width:40ch}
+.foot-q{margin:clamp(32px,4vw,52px) 0 0;font-size:clamp(1.05rem,1.6vw,1.35rem);font-weight:700}
+.foot-q a{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:4px}
+/* tg */
+.tg{position:relative;overflow:hidden;background:radial-gradient(ellipse 70% 90% at 90% 0%,rgba(201,255,46,.2),transparent 60%),radial-gradient(ellipse 50% 70% at 0% 100%,rgba(201,255,46,.08),transparent 60%),var(--ink)}
+.tg .in{position:relative;z-index:2;max-width:900px;padding:clamp(72px,12vw,140px) clamp(16px,4vw,48px) clamp(48px,7vw,84px);display:flex;flex-direction:column;align-items:flex-start;gap:22px}
+.tg h2{font-size:clamp(2rem,5vw,4.2rem);line-height:1.02;letter-spacing:-.03em;text-wrap:balance}
+.tg p{font-size:clamp(1rem,1.3vw,1.15rem);line-height:1.6;color:var(--muted);margin:0;max-width:58ch}
+footer{position:relative;z-index:2;border-top:1px solid var(--line);max-width:1240px;margin:0 auto;padding:22px clamp(16px,4vw,48px) 30px;display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:space-between;font-size:13px;color:var(--muted)}
+footer a{color:var(--paper);text-decoration:none;border-bottom:2px solid var(--acid);padding-bottom:2px}
+@media(max-width:1100px){.grid{column-count:3}}
+@media(max-width:900px){.intro{grid-template-columns:1fr;align-items:start;gap:22px}.nav a.l{display:none}.tag{font-size:11px;bottom:12px}}
+@media(max-width:860px){.grid{column-count:2}.note{max-width:none}}
+@media(max-width:640px){.bar{flex-direction:column;align-items:stretch}.bar .btn{white-space:normal;text-align:center}.cap strong{font-size:13px}.lk strong{font-size:14px}.promo{min-height:200px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <a class="logo" href="#glavnoe"><i></i>Distressed</a>
+  <nav class="nav" aria-label="Основная навигация">
+    <a class="l" href="#katalog">Витрина</a>
+    <a class="l" href="#kak-kupit">Как купить</a>
+    <a class="c" href="https://t.me/fuckdistressed">Открыть Telegram</a>
+  </nav>
+</header>
+
+<section class="cover" id="glavnoe">
+  <div class="intro">
+    <h1>Витрина на фото.<br><span>Склад — в Telegram.</span></h1>
+    <div class="side">
+      <p class="lead">Distressed — магазин брендовых вещей, которых нет на полках магазинов: кроссовки, худи, куртки и ботинки. На сайте — пробник из десяти фото. Настоящий ассортимент, цены и размеры — в канале @fuckdistressed.</p>
+      <div class="acts"><a class="btn" href="https://t.me/fuckdistressed">Открыть @fuckdistressed</a><a class="u" href="#katalog">Смотреть витрину ↓</a></div>
+      <p class="hint">Часть фото на сайте намеренно закрыта — их увидишь только в канале.</p>
+    </div>
+  </div>
+  <div class="strip">
+    <div class="track" id="brands"></div>
+    <span class="tag">Пробник · полный склад в Telegram</span>
+  </div>
+  <div class="mq" aria-hidden="true"><div class="track" id="mq"></div></div>
+</section>
+
+<section class="shop" id="katalog" aria-labelledby="st">
+  <div class="in">
+    <div class="head">
+      <h2 id="st">Витрина</h2>
+      <p class="note"><b>Жми на фото</b> — откроется крупный вид. Закрытые кадры и весь остальной ассортимент — только в Telegram-канале.</p>
+    </div>
+    <div class="grid" id="grid"></div>
+    <noscript><p class="note">Включи JavaScript, чтобы увидеть витрину, или сразу заходи в <a href="https://t.me/fuckdistressed">Telegram-канал</a>.</p></noscript>
+  </div>
+  <div class="modal" id="modal" hidden>
+    <div class="bd" data-close></div>
+    <div class="panel" role="dialog" aria-modal="true" aria-labelledby="mt">
+      <button class="x" data-close aria-label="Закрыть">✕</button>
+      <div class="stage">
+        <img id="mi" src="" alt="">
+        <button class="nb p" id="pv" aria-label="Предыдущее фото">←</button>
+        <button class="nb n" id="nx" aria-label="Следующее фото">→</button>
+        <span class="ct" id="ct"></span>
+      </div>
+      <div class="bar">
+        <div>
+          <p class="b" id="mb"></p>
+          <h3 id="mt"></h3>
+          <p class="s">Цены, размеры и наличие — в Telegram-канале. Напиши название вещи, ответим сразу.</p>
+        </div>
+        <a class="btn" href="https://t.me/fuckdistressed">Узнать цену в Telegram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="steps" id="kak-kupit" aria-labelledby="ht">
+  <div class="in">
+    <h2 id="ht">Как забрать вещь</h2>
+    <ol>
+      <li><span class="ic">1</span><p class="k">Шаг 1</p><h3>Загляни в канал</h3><p class="t">На сайте — пробник. В @fuckdistressed — весь склад с ценами, размерами и честными фото каждой вещи.</p></li>
+      <li><span class="ic">2</span><p class="k">Шаг 2</p><h3>Напиши название вещи</h3><p class="t">Скинь фото или название в @fuckdistressed — ответим, забронируем и согласуем оплату: на карту, СБП или при получении.</p></li>
+      <li><span class="ic">3</span><p class="k">Шаг 3</p><h3>Получи посылку</h3><p class="t">Отправляем в день заказа: СДЭК, Почта России или пункт выдачи. По РФ — 2–5 дней, всё с трек-номером.</p></li>
+    </ol>
+    <p class="foot-q">Не нашёл нужное? → <a href="https://t.me/fuckdistressed">спроси в @fuckdistressed</a></p>
+  </div>
+</section>
+
+<section class="tg" id="telegram">
+  <div class="in">
+    <h2>Досмотрел до конца — значит, пора в Telegram</h2>
+    <p>Десять фото на сайте — это капля. В канале @fuckdistressed — весь склад: закрытые кадры с витрины, цены, размеры и новые дропы каждый день.</p>
+    <a class="btn" href="https://t.me/fuckdistressed">Открыть @fuckdistressed</a>
+  </div>
+  <footer><span>© 2026 Distressed — магазин брендовой одежды</span><span><a href="https://t.me/fuckdistressed">Telegram: @fuckdistressed</a></span></footer>
+</section>
+
+<script>
+(function(){
+  var TG='https://t.me/fuckdistressed';
+  var items=[
+    {k:'o',b:'Nike',n:'Air Max 95 «Triple Black»',s:'img/distressed5.png',w:1280,h:1280,a:'Чёрные кроссовки Nike Air Max 95 на фоне печатного чека'},
+    {k:'l',b:'Air Zoom Spiridon · чёрные',s:'img/distressed3.png',w:1280,h:1280},
+    {k:'o',b:'Nike SB',n:'Dunk Low',s:'img/distressed2.png',w:1280,h:1280,a:'Кроссовки Nike SB Dunk Low в розово-оранжевой расцветке'},
+    {k:'l',b:'Air Zoom Spiridon · белые',s:'img/distressed4.png',w:1024,h:1024},
+    {k:'o',b:'C.P. Company',n:'Овершёрт голубой',s:'img/distressed8.png',w:1280,h:1280,a:'Голубой овершёрт C.P. Company на вешалке'},
+    {k:'l',b:'Stone Island · куртка',s:'img/distressed0.png',w:1000,h:1000},
+    {k:'o',b:'Maison Margiela',n:'Худи Number',s:'img/distressed9.png',w:1280,h:1280,a:'Белое худи Maison Margiela с принтом из цифр'},
+    {k:'l',b:'Armani Exchange · худи',s:'img/distressed6.png',w:960,h:1280},
+    {k:'o',b:'Timberland',n:'6-Inch Premium · чёрные',s:'img/distressed7.png',w:1178,h:1178,a:'Чёрные ботинки Timberland 6-Inch Premium'},
+    {k:'o',b:'Nike',n:'Air Zoom Spiridon «Silver»',s:'img/distressed1.png',w:1280,h:1280,a:'Серебристые кроссовки Nike Air Zoom Spiridon'}
+  ];
+  var lockSvg='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="1"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>';
+  var grid=document.getElementById('grid'), open=[];
+  items.forEach(function(it){
+    var el;
+    if(it.k==='o'){
+      el=document.createElement('button'); el.type='button'; el.className='tile';
+      el.innerHTML='<img src="'+it.s+'" alt="'+it.a+'" width="'+it.w+'" height="'+it.h+'" loading="lazy"><span class="cap"><b>'+it.b+'</b><strong>'+it.n+'</strong><small>Открыть фото →</small></span>';
+      var idx=open.push(it)-1; el.onclick=function(){show(idx,el)};
+    }else{
+      el=document.createElement('a'); el.href=TG; el.className='tile lock';
+      el.setAttribute('aria-label',it.b+' — фото скрыто, открыть в Telegram');
+      el.innerHTML='<img src="'+it.s+'" alt="" width="'+it.w+'" height="'+it.h+'" loading="lazy"><span class="lk">'+lockSvg+'<strong>'+it.b+'</strong><em>Только в Telegram</em></span>';
+    }
+    grid.appendChild(el);
+  });
+  var pr=document.createElement('a'); pr.href=TG; pr.className='tile promo';
+  pr.innerHTML='<span class="n"><i>∞</i> вещей</span><p>Склад, который не пройти за один заход: кроссовки, худи, куртки и ботинки. Цены, размеры и наличие — в канале, новые дропы каждый день.</p><u>Смотреть всё →</u>';
+  grid.appendChild(pr);
+
+  // ленты
+  var br=['Nike','Nike SB','Stone Island','C.P. Company','Maison Margiela','Timberland','Armani Exchange'],g='';
+  br.forEach(function(b){g+='<span>'+b+'</span><span class="s">•</span>'});
+  g+='<span class="m">+ ещё брендов</span><span class="s">•</span>';
+  document.getElementById('brands').innerHTML='<div class="grp">'+g+'</div><div class="grp" aria-hidden="true">'+g+'</div>';
+  var m='<span>Склад в Telegram • Полный ассортимент • Цены и размеры •&nbsp;</span>';
+  document.getElementById('mq').innerHTML=m+m;
+
+  // лайтбокс
+  var modal=document.getElementById('modal'),mi=document.getElementById('mi'),cur=0,last=null;
+  function render(){var it=open[cur];mi.src=it.s;mi.alt=it.a;
+    document.getElementById('mb').textContent=it.b;document.getElementById('mt').textContent=it.n;
+    document.getElementById('ct').textContent='Фото '+(cur+1)+' из '+open.length}
+  function show(i,t){cur=i;last=t;render();modal.hidden=false;document.body.style.overflow='hidden';
+    modal.querySelector('.x').focus();document.addEventListener('keydown',key)}
+  function close(){modal.hidden=true;document.body.style.overflow='';document.removeEventListener('keydown',key);if(last)last.focus()}
+  function step(d){cur=(cur+d+open.length)%open.length;render()}
+  function key(e){
+    if(e.key==='Escape')close();
+    else if(e.key==='ArrowLeft')step(-1);
+    else if(e.key==='ArrowRight')step(1);
+    else if(e.key==='Tab'){
+      var f=modal.querySelectorAll('a[href],button'),a=f[0],z=f[f.length-1];
+      if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}
+      else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}
+    }
+  }
+  [].forEach.call(modal.querySelectorAll('[data-close]'),function(b){b.onclick=close});
+  document.getElementById('pv').onclick=function(){step(-1)};
+  document.getElementById('nx').onclick=function(){step(1)};
+
+  var sx=null;
+  modal.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+  modal.addEventListener('touchend',function(e){if(sx===null)return;var d=e.changedTouches[0].clientX-sx;sx=null;if(Math.abs(d)>50)step(d>0?-1:1)});
+
+  // появление плиток
+  if(!matchMedia('(prefers-reduced-motion:reduce)').matches&&'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(!e.isIntersecting)return;var t=e.target;t.classList.remove('pre');
+      setTimeout(function(){t.style.transitionDelay=''},700);io.unobserve(t)})},{threshold:.12});
+    [].forEach.call(grid.children,function(t,i){t.classList.add('pre');t.style.transitionDelay=(i%4)*70+'ms';io.observe(t)});
+  }
+})();
+</script>
+</body>
+</html>
